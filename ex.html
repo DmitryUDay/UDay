@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Проект</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 20px;
+    font-family: "Comfortaa", sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+.message {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 500px;
+}
+
+.message h1 {
+    color: #ff4d4d;
+    margin-bottom: 15px;
+}
+
+.message p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.backBtn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(157, 157, 157, 0.5);
+}
+
+.backBtn:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<div class="message">
+  <h1>502 — Bad Gateway</h1>
+  <p>Страница <b id="projectName" style="font-size: 25px;"></b> не отвечает. Попробуйте отключить VPN или перезайти повторно. Если проблема повторится, обратитесь в  <a href="https://t.me/Dmitry_systemAccount">поддержку</a></p>
+  
+  <!-- Кнопка назад -->
+  <a href="index.html" class="backBtn">⬅ Назад на главную</a>
+</div>
+
+<script>
+  // Получаем значение параметра из URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const project = urlParams.get('project') || "";
+
+  // Подставляем в текст
+  document.getElementById('projectName').textContent = `${project}`;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Наши сотрудники</title>
+    <link rel="stylesheet" href="sotr.css">
+</head>
+<body>
+
+    <div class="backBar">
+        <a href="index.html" class="backBtn">⬅ Назад на главную</a>
+    </div>
+    
+    <h1 class="pageTitle">Команда программистов</h1>
+
+    <div class="teamGrid">
+        <div class="teamCard" data-start-year="2022" data-start-month="6">
+            <img src="img/employee1.jpg" alt="Осипов Дмитрий">
+            <div class="teamContent">
+                <div class="teamName">Осипов Дмитрий</div>
+                <div class="teamPosition">Основатель UDay-corporation</div>
+                <div class="teamExperience"></div>
+            </div>
+        </div>
+
+        <div class="teamCard" data-start-year="2024" data-start-month="12">
+            <img src="img/employee2.jpg" alt="Недря Максим">
+            <div class="teamContent">
+                <div class="teamName">Недря Максим</div>
+                <div class="teamPosition">Веб разработчик</div>
+                <div class="teamExperience"></div>
+            </div>
+        </div>
+        <div class="teamCard" data-start-year="2022" data-start-month="12">
+            <img src="img/employee2.jpg" alt="Шахаров Даниил">
+            <div class="teamContent">
+                <div class="teamName">Шахаров Даниил</div>
+                <div class="teamPosition">СисАдмин UCloud</div>
+                <div class="teamExperience"></div>
+            </div>
+        </div>
+    </div>
+    
+    <h1 class="pageTitle">Дизайнеры</h1>
+
+    <div class="teamGrid">
+        <div class="teamCard" data-start-year="2022" data-start-month="6">
+            <img src="img/employee1.jpg" alt="Южаков Дмитрий">
+            <div class="teamContent">
+                <div class="teamName">Южаков Дмитрий</div>
+                <div class="teamPosition">Тестировщик ПО и дизайнер</div>
+                <div class="teamExperience"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script>
+function calculateExperienceMonth(startYear, startMonth) {
+    const now = new Date();
+    let years = now.getFullYear() - startYear;
+    let months = now.getMonth() + 1 - startMonth;
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    let yearStr = years === 1 ? 'год' : (years > 1 && years < 5 ? 'года' : 'лет');
+    let monthStr = months === 1 ? 'месяц' : (months > 1 && months < 5 ? 'месяца' : 'месяцев');
+
+    let result = '';
+    if (years > 0) result += `${years} ${yearStr}`;
+    if (months > 0) result += (result ? ' и ' : '') + `${months} ${monthStr}`;
+    if (!result) result = '0 месяцев';
+
+    return result;
+}
+
+// Авто-подстановка для всех сотрудников
+document.querySelectorAll('.teamCard').forEach(card => {
+    const year = parseInt(card.dataset.startYear);
+    const month = parseInt(card.dataset.startMonth);
+    const experienceDiv = card.querySelector('.teamExperience');
+    experienceDiv.textContent = `Работает: ${calculateExperienceMonth(year, month)}`;
+});
+</script>

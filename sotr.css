@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Comfortaa", sans-serif;
+    background: #f0f4f8;
+    color: #000;
+}
+
+/* Верхняя панель */
+.backBar {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.backBtn {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+    background: rgba(0, 208, 255, 0.15);
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Заголовок страницы */
+.pageTitle {
+    text-align: center;
+    margin-top: 90px; /* компенсируем высоту панели */
+    font-size: 36px;
+    color: #000000;
+}
+
+/* Сетка сотрудников */
+.teamGrid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Карточка сотрудника */
+.teamCard {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.teamCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.teamCard img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.teamCard .teamContent {
+    padding: 15px;
+}
+
+.teamCard .teamName {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.teamCard .teamPosition {
+    font-size: 16px;
+    color: #333;            
+    margin-bottom: 5px;
+}
+
+.teamCard .teamExperience {
+    font-size: 14px;
+    color: #555;
+}
