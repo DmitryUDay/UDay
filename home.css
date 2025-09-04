@@ -1,45 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap');
 
-body{
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 0;
-  font-family: "Comfortaa", sans-serif;
-  background-color: rgb(255, 255, 255);
+body {
+    margin: 0 20px;
+    padding: 0;
+    font-family: "Comfortaa", sans-serif;
+    background-color: rgb(255, 255, 255);
 }
 
-
-
-
-.alertA{
+/* Alert */
+.alertA {
     background: rgba(186, 186, 186, 0.6);
     backdrop-filter: saturate(180%) blur(20px);
     font-size: 15px;
     margin: 5px;
     border-radius: 50px;
     padding: 10px;
-
     display: none;
-    /* display: flex; */
     justify-content: space-between;
 }
-.alertA button{
+
+.alertA button {
     background: none;
     border: none;
     cursor: pointer;
 }
-.alertA button:hover{
+.alertA button:hover {
     color: rgb(64, 64, 64);
 }
 
-
-
-.naviBar{
+/* Navigation */
+.naviBar {
     top: 0;
     left: 0;
     right: 0;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 10px;
     position: fixed;
     display: flex;
     align-items: center;
@@ -48,27 +42,23 @@ body{
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: saturate(180%) blur(20px);
     z-index: 1000;
-    text-decoration: none;
-    
-    
 }
 
-.naviBar a{
+.naviBar a {
     text-decoration: none;
 }
 
-.nana{
-    color: black; 
+.nana {
+    color: black;
     transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
 }
 
 .nana:hover {
-  transform: scale(1.1);
-  text-shadow: 0 0 10px #000000;
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #000000;
 }
 
-
-
+/* Hero section */
 .textUD {
     position: absolute;
     top: 45%;
@@ -98,14 +88,14 @@ body{
 }
 
 .butA:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ffffff;
 }
 
-
-
+/* Cards */
 .card {
     width: 300px;
+    max-width: 100%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     padding: 10px;
@@ -115,9 +105,16 @@ body{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .reviev {
@@ -126,33 +123,50 @@ body{
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    margin-top: auto;      /* толкает кнопку вниз */
-    margin-bottom: 10px;   /* отступ от низа */
+    margin-top: auto;
+    margin-bottom: 10px;
     padding: 5px 10px;
     font-size: 20px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.reviev:hover {
+    transform: scale(1.1);
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 10px rgba(190, 190, 190, 0.364);
+}
+
+/* Container */
 .container {
-    max-width: calc(100% - 40px); /* учитываем отступы body по 20px с каждой стороны */
-    margin: 0 auto;               /* центрируем контейнер */
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
 }
 
+/* Show more button */
 .nextes {
-    display: block;               /* чтобы width работал */
-    width: 100%;                 /* растягиваем по ширине контейнера */
+    display: block;
+    width: 100%;
     background-color: white;
-    color: black;                /* чтобы текст был виден на черном фоне */
+    color: black;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
-    box-sizing: border-box;     /* учитываем padding */
+    box-sizing: border-box;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.nextes:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 10px rgba(190, 190, 190, 0.364);
+}
 
+/* Block update */
 .blockUpdate {
     position: relative;
     background-image: url('img/newes.png');
@@ -192,7 +206,6 @@ body{
     display: block;
 }
 
-
 .bottomBlockUpdate {
     display: flex;
     background-color: rgba(255, 255, 255, 0.9);
@@ -207,7 +220,7 @@ body{
 }
 
 .btnUPD {
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 12px 20px;
     border-radius: 12px;
@@ -215,28 +228,16 @@ body{
     font-weight: bold;
     background-color: white;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
-    color: black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btnUPD:hover {
     transform: scale(1.08);
     background-color: black;
     color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Анимация появления */
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Animations */
 .container {
     opacity: 0;
     transform: scale(0.8);
@@ -245,60 +246,134 @@ body{
 
 @keyframes popIn {
     0% {
-    opacity: 0;
-    transform: scale(0.6);
+        opacity: 0;
+        transform: scale(0.6);
     }
     60% {
-    opacity: 1;
-    transform: scale(1.05);
+        opacity: 1;
+        transform: scale(1.05);
     }
     100% {
-    opacity: 1;
-    transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
+/* Footer */
 .contentFooter a {
-    display: block;        /* каждая ссылка занимает всю строку */
-    margin-bottom: 8px;    /* регулируемый отступ между ссылками */
+    display: block;
+    margin-bottom: 8px;
     color: rgb(0, 0, 0);
-    text-decoration: none; /* убираем подчеркивание */
+    text-decoration: none;
 }
 
 .contentFooter a:hover {
-    color: rgb(53, 53, 53);          /* пример наведения */
+    color: rgb(53, 53, 53);
 }
 
-.footer{
+.footer {
     font-size: 25px;
 }
 
+/* Back button */
 .backBar {
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 15px 20px;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .backBtn {
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
 .backBtn:hover {
-  background: rgba(0, 208, 255, 0.15);
-  color: #0077ff;
-  transform: scale(1.05);
+    background: rgba(0, 208, 255, 0.15);
+    color: #0077ff;
+    transform: scale(1.05);
+}
+
+/* ========================= */
+/* Media queries: адаптивность */
+@media (max-width: 768px) {
+    .textUD {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 90%;
+        font-size: 20px;
+    }
+
+    .textUD h1 {
+        font-size: 28px;
+    }
+
+    .butA {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    .card {
+        width: 90%;
+        margin: 0 auto 20px auto;
+    }
+
+    .container > div[style*="display: flex;"] {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .naviBar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blockUpdate h1 {
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .blockUpdate img {
+        max-width: 140px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .textUD {
+        width: 70%;
+        font-size: 28px;
+    }
+
+    .textUD h1 {
+        font-size: 40px;
+    }
+
+    .butA {
+        font-size: 25px;
+        padding: 10px 18px;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .container > div[style*="display: flex;"] {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
 }
