@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Портал</title>
+<style>
+  body {
+    margin: 0;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+  }
+
+  .loader-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  /* Две капли */
+  .drops {
+    position: relative;
+    width: 200px;
+    height: 50px;
+  }
+
+  .drop {
+    width: 40px;
+    height: 40px;
+    background: #3b82f6;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    animation: moveDrop 2s infinite ease-in-out;
+  }
+
+  .drop.second {
+    background: #06b6d4;
+    animation-delay: 1s;
+  }
+
+  @keyframes moveDrop {
+    0% { left: 0; transform: scale(1); }
+    25% { left: 80px; transform: scale(1.2); }
+    50% { left: 160px; transform: scale(1); }
+    75% { left: 80px; transform: scale(1.2); }
+    100% { left: 0; transform: scale(1); }
+  }
+
+  .text-info {
+    font-size: 14px;
+    max-width: 300px;
+    text-align: center;
+    color: #555;
+  }
+
+  .btnCancel {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #3b82f6;
+    background: #fff;
+    color: #3b82f6;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+
+  .btnCancel:hover {
+    background: #3b82f6;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+  <div class="loader-container">
+    <div class="drops">
+      <div class="drop first"></div>
+      <div class="drop second"></div>
+    </div>
+    <div class="text-info">
+      Переход на стороннюю ссылку. пожалуйста, подождите checking system UCloud <strong>UDay Shield</strong></div>
+    <button class="btnCancel">Отмена</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const projectURL = params.get('project') || 'index.html';
+
+    let redirectTimeout = setTimeout(() => {
+      window.location.href = projectURL;
+    }, 4000);
+
+    document.querySelector('.btnCancel').addEventListener('click', () => {
+      clearTimeout(redirectTimeout);
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

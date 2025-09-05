@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UDay</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
 
 <!-- Навигационная панель -->
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; top: 0; left: 0; right: 0; flex-wrap: wrap;">
+    <h1 style="color: rgb(255, 255, 255);">UDay</h1>
+    <div>
+        <a style="text-decoration: none; color: white;">События</a>
+        <a style="text-decoration: none; color: white;">Проекты</a>
+        <a style="text-decoration: none; color: white;">Наша команда</a>
+        <a style="text-decoration: none; color: white;">Поддержка</a>
+    </div>
+</div>
+
 <header class="naviBar">
-    <h1>UDay</h1>
+    <a href="index.html" style="color: black; text-decoration: none;"><h1>UDay</h1></a>
     <nav class="menuLinks">
         <a href="events.html">События</a>
         <a href="ex.html?project=ABartaj.com">Проекты</a>
@@ -19,17 +30,17 @@
     </nav>
 </header>
 
+
+
 <div class="kitty">
     <!-- Главное изображение и текст -->
     <section class="banner">
         <img src="img/fone1.png" alt="Главный баннер">
         <div class="textUD">
             <h1>UDay - платформа для инновационных проектов</h1>
-            <a href="ex.html?project=ABartaj.com" class="butA">Посмотреть проекты</a>
+            <a href="ex.html?project=ABartaj.com" class="butA">Открыть библиотеку проектов</a>
         </div>
     </section>
-
-    <hr>
 
     <!-- Топ 6 проектов -->
     <section class="projectsContainer">
@@ -94,21 +105,22 @@
         <div class="footer-links">
             <div>
                 <h3>Безопасность и политика</h3>
-                <a href="#">Правила использования</a>
-                <a href="#">Политика данных</a>
+                <a href="usageRules.html">Правила использования</a>
+                <a href="policyData.html">Политика обработки данных</a>
                 <a href="#">Договоры и подписи</a>
             </div>
             <div>
                 <h3>UDay</h3>
-                <a href="#">О нас</a>
+                <a href="about.html">О нас</a>
                 <a href="#">Блог</a>
-                <a href="#">Наш персонал</a>
+                <a href="huamnInCompany.html">Наш персонал</a>
             </div>
             <div>
                 <h3>Другое</h3>
                 <a href="#">Подкасты</a>
                 <a href="#">Форумы</a>
                 <a href="#">FAQ-поддержка</a>
+                <a href="#">Стать сотрудником</a>
             </div>
             <div>
                 <h3>Для разработчиков</h3>
@@ -119,13 +131,14 @@
         </div>
 
         <div class="socials">
-            <img src="img/tiktok.png" alt="TikTok">
-            <img src="img/youtube.png" alt="YouTube">
-            <img src="img/github.png" alt="GitHub">
+            <a href="ex.html"><img src="https://cdn-icons-png.flaticon.com/512/3116/3116491.png" alt="TikTok"></a>
+            <a href="ex.html"><img src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="YouTube"></a>
+            <a href="portal.html?project=https://t.me/UDay_tehnologi"><img src="https://cdn-icons-png.flaticon.com/512/739/739209.png" alt="Telegram"></a>
+            <a href="ex.html"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"></a>
         </div>
 
         <div class="copyright">
-            UDay © 2022-2025 | <a href="#">Управлять cookie</a>
+            UDay © 2022-2025 | <a href="#" style="color: rgb(0, 0, 0);">Управлять cookie</a>
         </div>
     </footer>
 </div>
@@ -134,7 +147,7 @@
 </html>
 
 <script>
-        window.addEventListener('load', () => {
-            document.querySelector('.kitty').classList.add('loaded');
-        });
-    </script>
+    window.addEventListener('load', () => {
+        document.querySelector('.kitty').classList.add('loaded');
+    });
+</script>
