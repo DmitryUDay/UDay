@@ -88,13 +88,14 @@
       <div class="drop second"></div>
     </div>
     <div class="text-info">
-      Пожалуйста подождите. Проверяю ссылку <strong>UDay Shield</strong></div>
+      Пожалуйста, подождите. проверяю ссылку через <strong>UDay Shield machine</strong></div>
     <button class="btnCancel">Отмена</button>
   </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const projectURL = params.get('project') || 'index.html';
+    
 
     let redirectTimeout = setTimeout(() => {
       window.location.href = projectURL;

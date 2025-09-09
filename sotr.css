@@ -18,6 +18,7 @@ body {
 /* Сетка сотрудников */
 .teamGrid {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 40px 20px;
@@ -30,11 +31,12 @@ body {
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    width: 200px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     cursor: pointer;
+    flex: 1 1 200px;   /* каждая карточка минимум 200px */
+    max-width: 250px; /* но не шире 250px */
 }
 
 .teamCard:hover {
@@ -68,4 +70,12 @@ body {
 .teamCard .teamExperience {
     font-size: 14px;
     color: #555;
+}
+
+/* 📱 телефоны */
+@media (max-width: 600px) {
+    .teamCard {
+        flex: 1 1 calc(50% - 20px); /* 2 карточки в ряд */
+        max-width: calc(50% - 20px);
+    }
 }

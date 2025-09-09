@@ -5,6 +5,7 @@
     <title>Наши сотрудники</title>
     <link rel="stylesheet" href="sotr.css">
     <link rel="stylesheet" href="backLine.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -32,8 +33,9 @@
                 <div class="teamExperience"></div>
             </div>
         </div>
+
         <div class="teamCard" data-start-year="2022" data-start-month="12">
-            <img src="img/IMG_2484.jpeg" alt="Шахаров Даниил">
+            <img src="https://dmitryuday.github.io/UDay/img/IMG_2484.jpeg" alt="Шахаров Даниил">
             <div class="teamContent">
                 <div class="teamName">Шахаров Даниил</div>
                 <div class="teamPosition">СисАдмин UCloud</div>
@@ -53,54 +55,7 @@
                 <div class="teamExperience"></div>
             </div>
         </div>
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
-
-<script>
-function calculateExperienceMonth(startYear, startMonth) {
-    const now = new Date();
-    let years = now.getFullYear() - startYear;
-    let months = now.getMonth() + 1 - startMonth;
-
-    if (months < 0) {
-        years--;
-        months += 12;
-    }
-
-    let yearStr = years === 1 ? 'год' : (years > 1 && years < 5 ? 'года' : 'лет');
-    let monthStr = months === 1 ? 'месяц' : (months > 1 && months < 5 ? 'месяца' : 'месяцев');
-
-    let result = '';
-    if (years > 0) result += `${years} ${yearStr}`;
-    if (months > 0) result += (result ? ' и ' : '') + `${months} ${monthStr}`;
-    if (!result) result = '0 месяцев';
-
-    return result;
-}
-
-// Авто-подстановка для всех сотрудников
-document.querySelectorAll('.teamCard').forEach(card => {
-    const year = parseInt(card.dataset.startYear);
-    const month = parseInt(card.dataset.startMonth);
-    const experienceDiv = card.querySelector('.teamExperience');
-    experienceDiv.textContent = `Работает: ${calculateExperienceMonth(year, month)}`;
-});
-
-</script>
