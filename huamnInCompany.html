@@ -5,12 +5,38 @@
     <title>Наши сотрудники</title>
     <link rel="stylesheet" href="sotr.css">
     <link rel="stylesheet" href="backLine.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="home.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div style="height: 10px;"></div>
+    
+    <!-- Навигация -->
+    <header class="naviBar">
+        <a href="index.html"><h1 style="color: black;">UDay</h1></a>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div style="height: 70px;"></div>
 
-    <div class="backBar">
-        <a href="index.html" class="backBtn">⬅ Назад на главную</a>
+    <div class="infofo" id="infofo">
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="contentInfo">
+            <a href="events.html">События</a>
+            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html">Проекты</a>
+            <a href="huamnInCompany.html" id="interakt">Команда</a>
+            <a href="ex.html">API</a>
+            <a href="https://t.me/osipuwu">Поддержка</a>
+        </div>
+
     </div>
     
     <h1 class="pageTitle">Команда программистов</h1>
@@ -43,7 +69,9 @@
             </div>
         </div>
     </div>
-    
+
+
+
     <h1 class="pageTitle">Дизайнеры</h1>
 
     <div class="teamGrid">
@@ -56,6 +84,69 @@
             </div>
         </div>
     </div>
+
+    <a href="ex.html" style="text-decoration: none;">
+        <div class="btn">
+            <p>Присоединиться к нам</p>
+            <p>-></p>
+        </div>
+    </a>
+
+    <div style="height: 10px;"></div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <div>
+                <h3>Безопасность и политика</h3>
+                <a href="usageRules.html">Правила использования</a>
+                <a href="policyData.html">Политика обработки данных</a>
+                <a href="#">Договоры и подписи</a>
+            </div>
+            <div>
+                <h3>UDay</h3>
+                <a href="about.html">О нас</a>
+                <a href="portal.html?project=https://t.me/UDay_tehnologi">Блог</a>
+                <a href="huamnInCompany.html">Наш персонал</a>
+            </div>
+            <div>
+                <h3>Другое</h3>
+                <a href="#">Оставить отзыв</a>
+                <a href="#">Форумы</a>
+                <a href="https://t.me/osipuwu">FAQ-поддержка</a>
+                <a href="#">Присоединиться</a>
+            </div>
+            <div>
+                <h3>Для разработчиков</h3>
+                <a href="#">Документации к проектам</a>
+                <a href="#">Форум разработчиков</a>
+                <a href="#">Вход в API</a>
+            </div>
+        </div>
+
+        <div class="socials">
+            <a href="ex.html"><img src="https://cdn-icons-png.flaticon.com/512/3116/3116491.png" alt="TikTok"></a>
+            <a href="ex.html"><img src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="YouTube"></a>
+            <a href="portal.html?project=https://t.me/UDay_tehnologi"><img src="https://cdn-icons-png.flaticon.com/512/739/739209.png" alt="Telegram"></a>
+            <a href="portal.html?project=https://github.com/DmitryUDay"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"></a>
+        </div>
+
+        <div class="copyright">
+            UDay © 2022-2025 | <a href="#" style="color: rgb(0, 0, 0);">Управлять cookie</a>
+        </div>
+    </footer>
+
+
+
+    <script>
+        const burger = document.getElementById("burger");
+        const infofo = document.getElementById("infofo");
+
+        burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        infofo.classList.toggle("active");
+        });
+    </script>
+
 
 </body>
 </html>

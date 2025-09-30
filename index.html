@@ -10,7 +10,7 @@
 <body>
 
 <!-- Навигационная панель -->
-<div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; top: 0; left: 0; right: 0; flex-wrap: wrap;">
+<!-- <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; top: 0; left: 0; right: 0; flex-wrap: wrap;">
     <h1 style="color: rgb(255, 255, 255);">UDay</h1>
     <div>
         <a style="text-decoration: none; color: white;">События</a>
@@ -18,17 +18,40 @@
         <a style="text-decoration: none; color: white;">Наша команда</a>
         <a style="text-decoration: none; color: white;">Поддержка</a>
     </div>
-</div>
+</div> -->
+
+
+
 
 <header class="naviBar">
-    <a href="index.html" style="color: black; text-decoration: none;"><h1>UDay</h1></a>
-    <nav class="menuLinks">
+    <h1 style="color: black;">UDay</h1>
+    <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+<div style="height: 70px;"></div>
+
+<div class="infofo" id="infofo">
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="contentInfo">
         <a href="events.html">События</a>
         <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html">Проекты</a>
-        <a href="huamnInCompany.html">Наша команда</a>
+        <a href="huamnInCompany.html">Команда</a>
+        <a href="ex.html">API</a>
         <a href="https://t.me/osipuwu">Поддержка</a>
-    </nav>
-</header>
+    </div>
+
+</div>
+
+
+
+
 
 
 
@@ -51,12 +74,6 @@
             <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?name=RUdolphu" class="reviev">Подробнее</a>
         </div>
         <div class="card">
-            <img src="img/softWare.png" alt="UOS">
-            <h2>UOS</h2>
-            <p>Операционная система для отладки физических проектов и написания кода на <a href="ex.html">RUS-link</a>.</p>
-            <a href="ex.html?project=ABartaj.com" class="reviev">Подробнее</a>
-        </div>
-        <div class="card">
             <img src="img/webSite.png" alt="UCloud">
             <h2>UCloud</h2>
             <p>Высокопроизводительный сервер для надёжного хранения данных, хостинга проектов и вычислений.</p>
@@ -74,12 +91,6 @@
             <p>Бесплатный магазин приложений, игр, программ и библиотека готовых скриптов инди-разработчиков.</p>
             <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html" class="reviev">Подробнее</a>
         </div>
-        <div class="card">
-            <img src="img/operationSYS.png" alt="Broken 2key">
-            <h2>Broken 2key</h2>
-            <p>Простой, но конфиденциальный P2P мессенджер.</p>
-            <a href="ex.html?project=ABartaj.com" class="reviev">Подробнее</a>
-        </div>
     </section>
 
     <div class="showMoreContainer">
@@ -90,14 +101,16 @@
 
     <!-- Недавние обновления -->
     <div class="blockUpdate">
-        <img src="img/newes.png" alt="Новость">
-        <h1>Встречайте глобальное обновление DUGA до версии 1.16</h1>
+        <img src="https://raw.githubusercontent.com/DmitryUDay/safetyImage/main/sally1.png" alt="Новость">
+        <h1>Анонс порта sally-face на движок python pygame!</h1>
         <div class="bottomBlockUpdate">
-            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?name=DUGA" class="btnUPD">Обновить в ABartaj</a>
-            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?name=DUGA" class="btnUPD">Подробнее</a>
+            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?name=Sally-face" class="btnUPD">Посмотреть в ABartaj</a>
+            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?name=Sally-face" class="btnUPD">Подробнее</a>
         </div>
     </div>
-    
+
+
+
     <hr>
 
     <!-- Футер -->
@@ -119,8 +132,8 @@
                 <h3>Другое</h3>
                 <a href="#">Оставить отзыв</a>
                 <a href="#">Форумы</a>
-                <a href="#">FAQ-поддержка</a>
-                <a href="#">Стать сотрудником</a>
+                <a href="https://t.me/osipuwu">FAQ-поддержка</a>
+                <a href="#">Присоединиться</a>
             </div>
             <div>
                 <h3>Для разработчиков</h3>
@@ -150,4 +163,12 @@
     window.addEventListener('load', () => {
         document.querySelector('.kitty').classList.add('loaded');
     });
+    const burger = document.getElementById("burger");
+    const infofo = document.getElementById("infofo");
+
+    burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    infofo.classList.toggle("active");
+    });
+
 </script>

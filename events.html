@@ -4,14 +4,38 @@
     <meta charset="UTF-8">
     <title>События UDay</title>
     <link rel="stylesheet" href="enent.css">
+    <link rel="stylesheet" href="home.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
     <!-- Навигация -->
-    <div class="backBar">
-    <a href="index.html" class="backBtn">⟵ На главную</a>
+    <header class="naviBar">
+        <a href="index.html"><h1 style="color: black;">UDay</h1></a>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div style="height: 70px;"></div>
+
+    <div class="infofo" id="infofo">
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="contentInfo">
+            <a href="events.html" id="interakt">События</a>
+            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html">Проекты</a>
+            <a href="huamnInCompany.html">Команда</a>
+            <a href="ex.html">API</a>
+            <a href="https://t.me/osipuwu">Поддержка</a>
+        </div>
+
     </div>
+
 
     <!-- Заголовок страницы -->
     <h1 class="pageTitle">Скоро...</h1>
@@ -84,6 +108,16 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const burger = document.getElementById("burger");
+        const infofo = document.getElementById("infofo");
+
+        burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        infofo.classList.toggle("active");
+        });
+    </script>
 
 </body>
 </html>
