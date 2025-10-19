@@ -32,58 +32,44 @@
         <div class="contentInfo">
             <a href="events.html">События</a>
             <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html">Проекты</a>
-            <a href="huamnInCompany.html" id="interakt">Команда</a>
+            <a href="huamnInCompany.html">Команда</a>
             <a href="ex.html">API</a>
+            <a href="about.html">О нас</a>
             <a href="https://t.me/osipuwu">Поддержка</a>
         </div>
 
     </div>
+
+
+
+
+
     
+    
+    <div id="teacher-modal" class="teacher-modal">
+    <div class="teacher-modal-content">
+        <span class="close">&times;</span>
+        <img id="modal-img" src="" alt="">
+        <div class="modal-info">
+        <h2 id="modal-name"></h2>
+        <p id="modal-role"></p>
+        <p id="modal-tip"></p>
+        <p id="modal-date"></p>
+        <p id="modal-phone"></p>
+        <blockquote id="modal-quote"></blockquote>
+        </div>
+    </div>
+    </div>
+
+    <br>
+
     <h1 class="pageTitle">Команда программистов</h1>
+    <div id="teachers-container" class="teachers"></div>
 
-    <div class="teamGrid">
-        <div class="teamCard" data-start-year="2022" data-start-month="6">
-            <img src="img/dev1.png" alt="Осипов Дмитрий">
-            <div class="teamContent">
-                <div class="teamName">Осипов Дмитрий</div>
-                <div class="teamPosition">Основатель UDay-corporation</div>
-                <div class="teamExperience"></div>
-            </div>
-        </div>
-
-        <div class="teamCard" data-start-year="2024" data-start-month="12">
-            <img src="img/dev2.png" alt="Недря Максим">
-            <div class="teamContent">
-                <div class="teamName">Недря Максим</div>
-                <div class="teamPosition">Веб разработчик</div>
-                <div class="teamExperience"></div>
-            </div>
-        </div>
-
-        <div class="teamCard" data-start-year="2022" data-start-month="12">
-            <img src="https://dmitryuday.github.io/UDay/img/IMG_2484.jpeg" alt="Шахаров Даниил">
-            <div class="teamContent">
-                <div class="teamName">Шахаров Даниил</div>
-                <div class="teamPosition">СисАдмин UCloud</div>
-                <div class="teamExperience"></div>
-            </div>
-        </div>
-    </div>
+    <br>
 
 
 
-    <h1 class="pageTitle">Дизайнеры</h1>
-
-    <div class="teamGrid">
-        <div class="teamCard" data-start-year="2023" data-start-month="6">
-            <img src="img/dev3.png" alt="Южаков Дмитрий">
-            <div class="teamContent">
-                <div class="teamName">Южаков Дмитрий</div>
-                <div class="teamPosition">Тестировщик ПО и дизайнер</div>
-                <div class="teamExperience"></div>
-            </div>
-        </div>
-    </div>
 
     <a href="ex.html" style="text-decoration: none;">
         <div class="btn">
@@ -137,15 +123,79 @@
 
 
 
-    <script>
-        const burger = document.getElementById("burger");
-        const infofo = document.getElementById("infofo");
 
-        burger.addEventListener("click", () => {
-        burger.classList.toggle("active");
-        infofo.classList.toggle("active");
+
+<script>
+    function getAgeText(yearInput) {
+        const year = Number(yearInput);
+        if (!Number.isFinite(year)) return '';
+        const currentYear = new Date().getFullYear();
+        const diff = currentYear - year;
+        if (diff < 0) return 'в будущем';
+        if (diff === 0) return 'меньше года';
+        if (diff === 1) return '1 год';
+        const mod10 = diff % 10;
+        const mod100 = diff % 100;
+        if (mod100 >= 11 && mod100 <= 14) return `${diff} лет`;
+        if (mod10 >= 2 && mod10 <= 4) return `${diff} года`;
+        return `${diff} лет`;
+        }
+
+        fetch('worker.json')
+        .then(res => res.json())
+        .then(data => {
+        const container = document.getElementById('teachers-container');
+        data.forEach(teacher => {
+            const card = document.createElement('div');
+            card.classList.add('teacher-card');
+            card.innerHTML = `
+            <img src="${teacher.img}" alt="${teacher.name}">
+            <div class="teacher-info">
+                <h3>${teacher.name}</h3>
+                <p><strong>Роль:</strong> ${teacher.dolj}</p>
+                <p><strong>Должность:</strong> ${teacher.worked}</p>
+                <p class="date"><strong>Работает с:</strong> ${teacher.god} ≈ ${getAgeText(teacher.god)}</p>
+            </div>
+            `;
+            card.addEventListener('click', () => openModal(teacher));
+            container.appendChild(card);
         });
-    </script>
+        })
+        .catch(err => console.error('Ошибка при загрузке данных:', err));
+
+        /* ======== Модальное окно ======== */
+        const modal = document.getElementById('teacher-modal');
+        const closeBtn = modal.querySelector('.close');
+
+        function openModal(teacher) {
+            modal.querySelector('#modal-img').src = teacher.img;
+            modal.querySelector('#modal-name').textContent = teacher.name;
+            modal.querySelector('#modal-role').textContent = `Роль: ${teacher.dolj}`;
+            modal.querySelector('#modal-tip').textContent = `Должность: ${teacher.worked}`;
+            modal.querySelector('#modal-date').textContent = `Работает с ${teacher.god} — ${getAgeText(teacher.god)}`;
+            modal.querySelector('#modal-quote').textContent = teacher.tolk || '';
+            modal.classList.add('show');
+        }
+
+        function closeModal() { modal.classList.remove('show'); }
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+
+    window.addEventListener('load', () => {
+        document.querySelector('.kitty').classList.add('loaded');
+    });
+    const burger = document.getElementById("burger");
+    const infofo = document.getElementById("infofo");
+
+    burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    infofo.classList.toggle("active");
+    });
+
+</script>
+
 
 
 </body>

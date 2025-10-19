@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tile Card Animation</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1e1e1e;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.tile-container {
+  perspective: 1000px;
+}
+
+.tile {
+  width: 150px;
+  height: 150px;
+  background: #0078d7;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.6s ease-in-out;
+  transform-origin: center;
+  position: relative;
+  z-index: 10;
+}
+
+.tile.opened {
+  transform: rotateY(360deg);
+}
+
+.tile span {
+  position: relative;
+  z-index: 2;
+}
+
+.card-content {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  max-width: 400px;   /* фиксированная ширина для вертикальной карточки */
+  width: calc(100vw - 40px); /* адаптивно для мобильных */
+  max-height: 90vh;   /* вертикальная карточка */
+  background: #00bcf2;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+  z-index: 5;
+}
+
+.card-content.show {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) scale(1);
+}
+
+.close-btn {
+  align-self: flex-end;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.close-btn:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.text-content {
+  flex: 1;
+}
+</style>
+</head>
+<body>
+
+<div class="tile-container">
+  <div class="tile"><span>Приложение</span></div>
+</div>
+
+<div class="card-content">
+  <button class="close-btn">Закрыть</button>
+  <div class="text-content">
+    <p>Это карточка с текстом. Если текста будет много, вы сможете скроллить содержимое.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod, nisi vel consectetur interdum, nisl nisi dapibus nulla, eu blandit urna odio vel lectus. Donec in tortor vel elit sagittis mollis.</p>
+    <p>Ещё текст для проверки скролла. Прокручивай вниз!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec purus ac augue tempor lacinia. Sed ut sapien sed nisi malesuada tristique. Curabitur vitae lorem a nunc elementum viverra.</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tile = document.querySelector('.tile');
+  const card = document.querySelector('.card-content');
+  const closeBtn = document.querySelector('.close-btn');
+
+  tile.addEventListener('click', () => {
+    // проверка чтобы не открыть несколько раз
+    if (!card.classList.contains('show')) {
+      tile.classList.add('opened');
+      card.classList.add('show');
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    tile.classList.remove('opened');
+    card.classList.remove('show');
+  });
+});
+</script>
+
+</body>
+</html>
