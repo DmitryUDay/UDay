@@ -56,22 +56,13 @@ body {
 </head>
 <body>
 
-<div class="message"> 
-  <h1>502 — Bad Gateway</h1>
-  <p>Страница <b id="projectName" style="font-size: 25px;"></b> не отвечает на этот запрос. Попробуйте отключить VPN или перезайти повторно. Если проблема повторится, обратитесь в  <a href="https://t.me/Dmitry_systemAccount">поддержку</a></p>
-  
-  <!-- Кнопка назад -->
+<div class="message">
+  <h1>503 — Сервис временно недоступен</h1>
+  <p>Порталу не удаётся открыть эту страницу. Попробуйте отключить VPN или перезайти повторно. Если проблема повторится — обратитесь в  <a href="https://t.me/Dmitry_systemAccount">поддержку</a></p>
+
   <a href="index.html" class="backBtn">⬅ Назад на главную</a>
 </div>
 
-<script>
-  // Получаем значение параметра из URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const project = urlParams.get('project') || "";
-
-  // Подставляем в текст
-  document.getElementById('projectName').textContent = `${project}`;
-</script>
 
 </body>
 </html>

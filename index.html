@@ -10,6 +10,8 @@
 </head>
 <body>
 
+
+<button id="toTopBtn">↑</button>
 <header class="naviBar">
     <h1 style="color: black;">UDay</h1>
     <div class="burger" id="burger">
@@ -49,7 +51,6 @@
         <img src="img/fone1.png" alt="Главный баннер">
         <div class="textUD">
             <h1>UDay - платформа для инновационных проектов</h1>
-            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html" class="butA">Открыть библиотеку проектов</a>
         </div>
     </section>
 
@@ -78,6 +79,7 @@
 
 
 
+    <h1 align="center">Популярные проекты</h1>
 
     <!-- Топ 6 проектов -->
     <section class="projectsContainer">
@@ -85,19 +87,13 @@
             <img src="img/aiModel.png" alt="RUdolphu">
             <h2>RUdolphu</h2>
             <p>Нейро-машина на базе собственного ручного обучения для выполнения легких задач.</p>
-            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?name=RUdolphu" class="reviev">Подробнее</a>
+            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?project=RUdolphu%25rhrhbdfggregber" class="reviev">Подробнее</a>
         </div>
         <div class="card">
             <img src="img/webSite.png" alt="UCloud">
             <h2>UCloud</h2>
             <p>Высокопроизводительный сервер для надёжного хранения данных, хостинга проектов и вычислений.</p>
             <a href="ex.html?project=ABartaj.com" class="reviev">Подробнее</a>
-        </div>
-        <div class="card">
-            <img src="img/duga.png" alt="DUGA">
-            <h2>DUGA</h2>
-            <p>Хоррор-игра в стиле 1980-х — пародия на FNaF, где герой работает кладовщиком на складе.</p>
-            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?name=DUGA" class="reviev">Подробнее</a>
         </div>
         <div class="card">
             <img src="img/boots.png" alt="ABartaj">
@@ -108,17 +104,17 @@
     </section>
 
     <div class="showMoreContainer">
-        <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html" class="nextes">Показать еще</a>
+        <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html" class="nextes">Узнать больше</a>
     </div>
 
     <hr>
 
     <!-- Недавние обновления -->
     <div class="blockUpdate">
-        <img src="https://raw.githubusercontent.com/DmitryUDay/safetyImage/main/sally1.png" alt="Новость">
-        <h1>Анонс порта sally-face на движок python pygame!</h1>
+        <img src="https://dmitryuday.github.io/ABartaj/server/teezer.png" alt="Новость">
+        <h1>ABartaj готовится к общему доступу всем пользователям!</h1>
         <div class="bottomBlockUpdate">
-            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/MrBuilder.html?name=Sally-face" class="btnUPD">Посмотреть в ABartaj</a>
+            <a href="portal.html?project=https://dmitryuday.github.io/ABartaj/index.html" class="btnUPD">Посетить сайт</a>
         </div>
     </div>
 
@@ -184,4 +180,24 @@
     infofo.classList.toggle("active");
     });
 
+</script>
+<script>
+    const btn = document.getElementById("toTopBtn");
+
+    // Показывать кнопку при прокрутке вниз более чем на 200px
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            btn.style.display = "flex";
+        } else {
+            btn.style.display = "none";
+        }
+    });
+
+    // Плавный скролл вверх
+    btn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 </script>

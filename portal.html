@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Портал</title>
+<title>Safety machine</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap');
   body {
     margin: 0;
     background: #fff;
@@ -18,6 +19,10 @@
     color: #333;
   }
 
+  *{
+    font-family: "Comfortaa", sans-serif;
+  }
+
   .loader-container {
     position: relative;
     display: flex;
@@ -26,34 +31,11 @@
     gap: 30px;
   }
 
-  /* Две капли */
-  .drops {
-    position: relative;
-    width: 200px;
-    height: 50px;
-  }
-
-  .drop {
-    width: 40px;
-    height: 40px;
-    background: #3b82f6;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    animation: moveDrop 2s infinite ease-in-out;
-  }
-
-  .drop.second {
-    background: #06b6d4;
-    animation-delay: 1s;
-  }
-
-  @keyframes moveDrop {
-    0% { left: 0; transform: scale(1); }
-    25% { left: 80px; transform: scale(1.2); }
-    50% { left: 160px; transform: scale(1); }
-    75% { left: 80px; transform: scale(1.2); }
-    100% { left: 0; transform: scale(1); }
+  /* GIF размещается по центру */
+  .gif-box img {
+    width: 500px;   /* можешь изменить размер */
+    height: auto;
+    display: block;
   }
 
   .text-info {
@@ -67,44 +49,45 @@
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 25px;
-    border: 1px solid #3b82f6;
+    border: 1px solid black;
     background: #fff;
-    color: #3b82f6;
+    color: black;
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s;
   }
 
   .btnCancel:hover {
-    background: #3b82f6;
+    background: black;
     color: #fff;
   }
 </style>
 </head>
+
 <body>
   <div class="loader-container">
-    <div class="drops">
-      <div class="drop first"></div>
-      <div class="drop second"></div>
+
+    <!-- Блок вместо капель — вставка GIF -->
+    <div class="gif-box">
+      <img src="img\anima.gif" alt="loading animation">
     </div>
+
     <div class="text-info">
-      Пожалуйста, подождите. проверяю ссылку через <strong>UDay Shield machine</strong></div>
+      Пожалуйста подождите. Портал открывает ссылку в безопасном режиме
+    </div>
+
     <button class="btnCancel">Отмена</button>
   </div>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const projectURL = params.get('project') || 'index.html';
-    
-
-    let redirectTimeout = setTimeout(() => {
-      window.location.href = projectURL;
-    }, 4000);
-
-    document.querySelector('.btnCancel').addEventListener('click', () => {
-      clearTimeout(redirectTimeout);
-      window.location.href = 'index.html';
-    });
-  </script>
 </body>
 </html>
+
+<script> 
+    const params = new URLSearchParams(window.location.search); 
+    const projectURL = params.get('project') || 'index.html'; 
+    let redirectTimeout = setTimeout(() => { 
+      window.location.href = projectURL; 
+      }, 4000); 
+    document.querySelector('.btnCancel').addEventListener('click', () => { 
+    clearTimeout(redirectTimeout); 
+    window.location.href = 'index.html'; }); 
+  </script>

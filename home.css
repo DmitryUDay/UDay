@@ -161,7 +161,6 @@ body {
 }
 
 .butA:hover {
-    transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 
@@ -212,8 +211,8 @@ body {
 .reviev {
     margin: 0 15px 15px 15px;
     padding: 8px 15px;
-    background: #fff;
-    color: black;
+    background-color: black;
+    color: white;
     text-decoration: none;
     text-align: center;
     border-radius: 12px;
@@ -222,8 +221,6 @@ body {
 }
 
 .reviev:hover {
-    background: black;
-    color: white;
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
@@ -339,8 +336,8 @@ body {
     width: calc(100% - 40px); /* учитываем margin 20px слева и справа */
     margin: 20px auto; /* сверху/снизу 20px, по центру по горизонтали */
     padding: 15px 0; /* вертикальные отступы */
-    background-color: #fff;
-    color: black;
+    background-color: black;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 12px;
@@ -351,9 +348,6 @@ body {
 }
 
 .nextes:hover {
-    background-color: black;
-    color: white;
-    transform: scale(1.03);
     box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
@@ -486,4 +480,29 @@ body {
     .whyGrid i {
         font-size: 2rem;
     }
+}
+
+#toTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+    font-size: 20px;
+    display: none; /* по умолчанию скрыта */
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 100000;
+    transition: all 0.2s;
+}
+
+#toTopBtn:hover {
+    background: rgb(40, 40, 40);
 }
