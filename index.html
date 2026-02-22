@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UDay</title>
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="css/naviHover.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="icon" type="image/png" href="img/UDay-logo.png">
 </head>
@@ -33,11 +34,10 @@
         <a href="events.html">События</a>
         <a href="https://dmitryuday.github.io/ABartaj/index.html">Проекты</a>
         <a href="huamnInCompany.html">Команда</a>
-        <a href="404.html">API</a>
+        <a href="reestr.html">Архивы</a>
         <a href="about.html">О нас</a>
         <a href="https://t.me/osipuwu">Поддержка</a>
     </div>
-
 </div>
 
 
@@ -47,7 +47,6 @@
 
 
 <div class="kitty">
-    <!-- Главное изображение и текст -->
     <section class="banner">
         <img src="img/fone1.png" alt="Главный баннер">
         <div class="textUD">
@@ -66,13 +65,13 @@
                 <i class="fa-solid fa-users"></i>
                 <h3>Сильное сообщество</h3>
                 <h5>Мы объединяем независимых разработчиков, дизайнеров и исследователей, чтобы идеи оживали вместе.</h5>
-                <p>На момент 2025 года найденно 56 сообществ в базе UCloud</p>
+                <p>На момент 2026 года найденно 56 сообществ в базе UCloud</p>
             </div>
             <div>
                 <i class="fa-solid fa-code-branch"></i>
                 <h3>Открытые технологии</h3>
                 <h5>Большинство проектов UDay поддерживают open-source подход — учись, улучшай, создавай.</h5>
-                <p>Проектов насчитывается более 24шт</p>
+                <p>23 проекта с открытым кодом</p>
             </div>
             <div>
                 <i class="fa-solid fa-cloud-arrow-up"></i>
@@ -126,7 +125,7 @@
             <p>Открыли Kodarium — разработку сайтов по самой низкой цене! Заходите, выбирайте тарифы. Сделаем сайт за 10 дней, подарим 10 дней поддержки и много других бонусов.</p>
             <time>18.01.2026</time>
             <div class="bottomBlockUpdate">
-                <a href="http://kodariumlabs.space" class="btnUPD">Посетить сайт</a>
+                <a href="kodariumlabs.space" class="btnUPD">Посетить сайт</a>
             </div>
         </article>
 
@@ -157,12 +156,14 @@
                 <a href="#">Форумы</a>
                 <a href="https://t.me/osipuwu">FAQ-поддержка</a>
                 <a href="#">Присоединиться</a>
+                <a href="reestr.html">Реестр документов</a>
             </div>
             <div>
                 <h3>Для разработчиков</h3>
                 <a href="#">Документации к проектам</a>
                 <a href="#">Форум разработчиков</a>
                 <a href="#">Вход в API</a>
+                <a href="#">UCloud</a>
             </div>
         </div>
 
@@ -182,19 +183,7 @@
 </body>
 </html>
 
-<script>
-    window.addEventListener('load', () => {
-        document.querySelector('.kitty').classList.add('loaded');
-    });
-    const burger = document.getElementById("burger");
-    const infofo = document.getElementById("infofo");
-
-    burger.addEventListener("click", () => {
-    burger.classList.toggle("active");
-    infofo.classList.toggle("active");
-    });
-
-</script>
+<script src="buga.js"></script>
 <script>
     const btn = document.getElementById("toTopBtn");
 
@@ -214,5 +203,4 @@
             behavior: "smooth"
         });
     });
-
 </script>

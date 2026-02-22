@@ -9,123 +9,6 @@ body {
     color: #000;
 }
 
-/* --- Навигационная панель --- */
-.naviBar {
-    position: fixed;
-    top: 10;
-    border-radius: 50px;
-    padding: 5px;
-    left: 50%;
-    column-gap: 10px;
-    z-index: 1000;
-    transform: translateX(-50%);
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.576);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.naviBar a{
-    text-decoration: none;
-}
-
-
-#interakt {
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    display: inline-block; /* чтобы padding не растягивал контейнер */
-    text-align: center;
-}
-
-
-
-/* Боковое меню */
-.infofo {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  background: #fff;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-  padding: 20px;
-  z-index: 999;
-
-  /* Скрываем полностью за экраном */
-  transform: translateX(100%);
-  transition: transform 0.4s ease;
-}
-
-/* Когда активно — сдвигаем на место */
-.infofo.active {
-  transform: translateX(0);
-}
-
-.contentInfo{
-    display: flex;
-    flex-direction: column; /* в столбик */
-    gap: 20px;
-}
-
-.contentInfo a {
-  color: black;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 500;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-  transition: color 0.2s, padding 0.5s;
-}
-
-.contentInfo a:hover{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.contentInfo a:last-child {
-  border-bottom: none; /* убираем у последнего */
-}
-
-
-
-
-
-.naviBar h1 {
-    font-size: 1.8rem;
-    margin: 0;
-}
-
-
-
-
-
-
-
-.menuLinks {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.menuLinks a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    transition: transform 0.2s, color 0.2s;
-}
-
-.menuLinks a:hover {
-    transform: scale(1.05);
-    color: #8d8d8d;
-}
 
 /* --- Главное изображение и текст --- */
 .banner {
@@ -229,8 +112,7 @@ body {
 }
 
 .reviev:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
 /* --- Блок обновлений --- */
@@ -279,6 +161,10 @@ body {
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+
+.btnUPD:hover{
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
 
@@ -373,41 +259,6 @@ body {
 
 .kitty.loaded {
     animation: bounceIn 0.8s ease forwards;
-}
-
-
-/* Кнопка-бургер */
-.burger {
-  width: 30px;
-  height: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1100; /* выше бокового меню */
-}
-
-.burger span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: #333;
-  border-radius: 2px;
-  transition: 0.4s;
-}
-
-/* Анимация превращения в крест */
-.burger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger.active span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);   /* сжимаем в ноль */
-}
-
-.burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 

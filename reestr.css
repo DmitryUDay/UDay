@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap');
+
+body{
+    color: #000000;
+    font-family: "Comfortaa", sans-serif;
+    margin: 0;
+}
+
+.docs-container {
+    max-width: 1200px;
+    margin: 120px auto 60px; /* Отступ сверху, чтобы хедер не перекрывал */
+    padding: 0 20px;
+}
+
+.docs-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.accordion-item {
+    background: black; /* Твой темный цвет */
+    border: 1px solid #333;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-header {
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+.accordion-header:hover {
+    background: #252525;
+}
+
+.accordion-header::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+    color: #888;
+}
+
+.accordion-item.active .accordion-header::after {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background: #111;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px; /* С запасом */
+    padding: 15px 25px;
+    border-top: 1px solid #333;
+}
+
+.doc-link {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: all 0.3s;
+}
+
+.doc-link:hover {
+    color: #fff;
+    padding-left: 5px; /* Небольшой эффект при наведении */
+}

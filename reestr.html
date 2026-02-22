@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реестр документов | UDay</title>
+    <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reestr.css">
+    <link rel="stylesheet" href="css/naviHover.css">
+
+
+</head>
+<body>
+
+    <div style="height: 10px;"></div>
+    <!-- Навигация -->
+    <header class="naviBar">
+        <a href="index.html"><h1 style="color: black;">UDay</h1></a>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div style="height: 70px;"></div>
+
+    <div class="infofo" id="infofo">
+        <br>
+        <br>
+        <div class="contentInfo">
+            <a href="events.html">События</a>
+            <a href="https://dmitryuday.github.io/ABartaj/index.html">Проекты</a>
+            <a href="huamnInCompany.html">Команда</a>
+            <a href="reestr.html" style="background-color: black; color: white; border-radius: 5px; padding: 10px;">Архивы</a>
+            <a href="about.html">О нас</a>
+            <a href="https://t.me/osipuwu">Поддержка</a>
+        </div>
+
+    </div>
+
+
+    <main class="docs-container">
+        <h1 class="docs-title">Документы на проекты</h1>
+
+        <div class="accordion-item">
+            <div class="accordion-header">UCloud</div>
+            <div class="accordion-content">
+                <a href="#" class="doc-link">Конфиденциальность</a>
+                <a href="#" class="doc-link">Безопасность</a>
+                <a href="#" class="doc-link">Обновления</a>
+                <a href="#" class="doc-link">Резервное копирование копирования</a>
+                <a href="#" class="doc-link">Правила доступа по UOS</a>
+                <a href="#" class="doc-link">Обновление ПО</a>
+                <a href="#" class="doc-link">Журналы дампов</a>
+                <hr>
+                <p style="color: white;">Бланки</p>
+                <a href="#" class="doc-link">План защиты от сбоев</a>
+                <a href="#" class="doc-link">Комерческая система хостинга</a>
+                <a href="#" class="doc-link">Персональный хостинг</a>
+                <a href="#" class="doc-link">Технические требования</a>
+                <a href="#" class="doc-link">Модули управления</a>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">ABartaj</div>
+            <div class="accordion-content">
+                <a href="#" class="doc-link">Лицензионное соглашение</a>
+                <a href="#" class="doc-link">Правила публикации софта</a>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">Kodarium</div>
+            <div class="accordion-content">
+                <a href="pdf/dogovorKodarium.pdf" class="doc-link">Договр</a>
+                <a href="pdf/userAcceptedKodarium.pdf" class="doc-link">Соглашение о обработке</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="buga.js"></script>
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                
+                // Закрываем другие, если надо (опционально)
+                // document.querySelectorAll('.accordion-item').forEach(i => {
+                //    if (i !== item) i.classList.remove('active');
+                // });
+
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
